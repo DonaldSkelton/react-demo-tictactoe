@@ -119,7 +119,6 @@ ReactDOM.render(
 );
 
 function calculateWinner(squares) {
-  if (squares.every((square) => !!square)) return '🐱';
   const winning = [
     [0, 1, 2],
     [3, 4, 5],
@@ -134,5 +133,6 @@ function calculateWinner(squares) {
     const [a, b, c] = winning[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) return squares[a];
   };
+  if (squares.every((square) => !!square)) return '🐱';
   return null
 };
